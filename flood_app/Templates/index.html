@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flood Monitoring App</title>
+</head>
+<body>
+    <h1>Flood Monitoring</h1>
+    <form  action="get_station_details" method="GET">
+        <label for="station">Select a Station:</label>
+        <select name="station" id="station">
+            {%  for measure_id ,label,stationReference in measure_values %}
+            <option value="{{ stationReference }}" >{{ label }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Submit</button>
+    </form>   
+</body>
+</html>

@@ -1,0 +1,81 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        section {
+            width: 48%; /* Adjust the width as needed */
+            margin-bottom: 20px; /* Add space between sections */
+        }
+        button {
+            font-size: 14px;
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px; 
+            cursor: pointer; 
+        
+           
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+    </style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Flood Monitoring</title>
+    </head>
+
+    <body>
+    <button onclick="goBack()">Go Back</button>
+    <br><br><br>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+        <section>
+            <h1>Flood Monitoring</h1>
+            
+            <!-- Table Section -->
+            <div>
+                <table border=1>
+                    <thead>
+                        <tr>
+                            <th>Timestamp</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for entry in data %}
+                            <tr>
+                                <td>{{ entry.dateTime }}</td>
+                                <td>{{ entry.value }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <section>
+            <!-- Graph Section -->
+            <div>
+                <h2>Graph</h2>
+                <img src="{{ graph_image }}" alt="Line Graph">
+            </div>
+        </section>
+    </body>
+</html>
+
+
+
+
