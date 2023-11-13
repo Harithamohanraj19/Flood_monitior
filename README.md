@@ -15,7 +15,7 @@ Prerequisites
 Setup
    
    1. The first thing to do is to clone the repository
-        $ git clone https://github.com/Harithamohanraj19/Flood_monitior.git
+        $ git clone https://github.com/Harithamohanraj19/flood_monitor.git
         $ cd Flood_monitior
 
    2. Create a virtual environment to install dependencies in and activate it
